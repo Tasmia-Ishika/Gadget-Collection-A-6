@@ -1,3 +1,9 @@
 .text-color{
     color: rgb(245, 212, 28);
 }
+#error-handler{
+    display: none;
+}
+#spinner{
+    display: none;
+}
