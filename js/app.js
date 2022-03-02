@@ -75,7 +75,37 @@ const showMobileDetail = (phoneDetail) => {
     eachPhoneDetail.innerHTML = "";
     //dynamicly showing single phone details------------------>
     div.innerHTML = `
-    
+    <div class="card h-100 mb-3 mx-auto">
+    <img src="${phoneDetail.image}" class="w-25 card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title"><span class="fw-bold">Mobile Name:</span> ${phoneDetail.name}</h5>
+        <h5 class="card-title"><span class="fw-bold">Brand Name:</span> ${phoneDetail.brand}</h5>
+            <ul class="list-group">
+            <li class="list-group-item text-center"><span class="fw-bolder ">Main Features </span></li>
+     <li class="list-group-item list-group-item-action list-group-item-danger"><span class="fw-bold">Storage:</span> ${phoneDetail.mainFeatures.storage}</li>
+     <li class="list-group-item list-group-item-action list-group-item-primary"><span class="fw-bold">DisplaySize:</span> ${phoneDetail.mainFeatures.displaySize}</li>
+     <li class="list-group-item list-group-item-action list-group-item-secondary"><span class="fw-bold">ChipSet:</span> ${phoneDetail.mainFeatures.chipSet}</li>
+     <li class="list-group-item list-group-item-action list-group-item-success"><span class="fw-bold">Memory:</span> ${phoneDetail.mainFeatures.memory}</li>
+     <li class="list-group-item text-center"><span class="fw-bolder">Sensors </span></li>
+     <li class="list-group-item list-group-item-action list-group-item-danger"><span class="fw-bold"></span>${phoneDetail.mainFeatures.sensors[0]}</li>
+      <li class="list-group-item list-group-item-action list-group-item-warning"><span class="fw-bold"></span>${phoneDetail.mainFeatures.sensors[1]}</li>
+      <li class="list-group-item list-group-item-action list-group-item-info"><span class="fw-bold"></span>${phoneDetail.mainFeatures.sensors[2]}</li>
+      <li class="list-group-item list-group-item-action list-group-item-success"><span class="fw-bold"></span>${phoneDetail.mainFeatures.sensors[3]}</li>
+     <li class="list-group-item list-group-item-action list-group-item-danger"><span class="fw-bold"></span>${phoneDetail.mainFeatures.sensors[4]}</li>
+      <li class="list-group-item list-group-item-action list-group-item-warning"><span class="fw-bold"></span>${phoneDetail.mainFeatures.sensors[5]}</li>
+      <li class="list-group-item text-center"><span class="fw-bolder">Others </span></li>
+    <li class="list-group-item list-group-item-action list-group-item-warning"><span class="fw-bold">WLAN:</span>${phoneDetail.others?.WLAN ? phoneDetail.others.WLAN : " No WLAN found "}</li>
+      <li class="list-group-item list-group-item-action list-group-item-info"><span class="fw-bold">Bluetooth:</span>${phoneDetail.others?.Bluetooth ? phoneDetail.others.Bluetooth : " No Bluetooth found "}</li>
+         <li class="list-group-item list-group-item-action list-group-item-danger"><span class="fw-bold">GPS:</span>${phoneDetail.others?.GPS ? phoneDetail.others.GPS : " No GPS found "}</li>
+          <li class="list-group-item list-group-item-action list-group-item-dark"><span class="fw-bold">NFC:</span>${phoneDetail.others?.NFC ? phoneDetail.others.NFC : " No NFC found "}</li>
+         <li class="list-group-item list-group-item-action list-group-item-primary"><span class="fw-bold">Radio:</span> ${phoneDetail.others?.Radio ? phoneDetail.others.Radio : " No Radio found "}</li>
+          <li class="list-group-item list-group-item-action list-group-item-success"><span class="fw-bold">USB:</span>
+          ${phoneDetail.others?.USB ? phoneDetail.others.USB : " No USB found "}</li>
+        <li class="list-group-item text-center"><span class="fw-bolder">Release Date </span></li>
+        <li class="list-group-item list-group-item-danger"><span class="fw-bold">ReleaseDate:</span> ${phoneDetail.releaseDate ? phoneDetail.releaseDate : " No release date found "}</li>
+</ul>
+    </div>
+</div>
     `;
     eachPhoneDetail.appendChild(div);
 }
